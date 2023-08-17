@@ -1,0 +1,25 @@
+class subject 
+{
+  constructor()
+  {
+    console.log('Details are : ')
+  }
+  details()
+  {
+    console.log("Full stack web development Course")
+  }
+}
+
+class student extends  subject
+{
+  details()
+  {
+    console.log("Pursing couse =>")
+    super.details()
+  }
+}
+var obj1 = new subject
+var obj2 = new student
+
+obj1.details()
+obj2.details()
