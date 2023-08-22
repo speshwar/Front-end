@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length converter</title>
+
+    <style>
+        body {
+            background: #e3c297;
+        }
+        
+        .form {
+            background-color: rgb(31, 29, 42);
+            height: 30rem;
+            width: 30rem;
+            position: relative;
+            border-radius: 10px;
+            margin-left: 30%;
+            margin-top: 10%;
+        }
+        
+        .head h2 {
+            color: #e3c297;
+            position: absolute;
+            top: 3rem;
+            left: 10rem;
+        }
+        
+        .bottom {
+            position: absolute;
+            top: 8rem;
+            left: 5rem;
+            /* background-color: aqua; */
+        }
+        
+        .ansbtn {
+            display: block;
+            padding: 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            width: 15rem;
+            font-size: medium;
+            margin-left: 2rem;
+            border-radius: 10px;
+            background-color: #e3c297;
+        }
+        
+        .inp {
+            padding: .8rem;
+            font-size: medium;
+            width: 18rem;
+            border-radius: 10px;
+        }
+        
+        .ans {
+            color: whitesmoke;
+            height: 5rem;
+            width: 16rem;
+            position: absolute;
+            top: 17rem;
+            left: 9rem;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <div class="head">
+            <h2>Cm TO Inches</h2>
+        </div>
+        <div class="bottom">
+            <input type="text" class="inp" placeholder="Enter the value" id="inp_val">
+            <button class="ansbtn" id="btnclick" onclick="cmTOinch()">Convert to inches</button>
+        </div>
+        <div class="ans" id="ans">
+
+        </div>
+    </div>
+    <script>
+        function cmTOinch() {
+            let inp_val = document.getElementById("inp_val").value;
+            let ans = document.getElementById("ans");
+            if (inp_val !== null && !isNaN(inp_val)) {
+                let fxd = inp_val / 2.54;
+                ans.innerHTML = fxd.toFixed(2) + " Inches";
+            } else {
+                alert('Please enter valid input');
+            }
+        }
+    </script>
+</body>
+
+</html>
