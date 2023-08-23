@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+  </head>
+  <body>
+    <h1 id="header"></h1>
+    <button class="btn" onclick="randomNum()">click Here</button>
+    <div class="value" id="value"></div>
+    <script>
+        let inp = document.getElementById('value');
+        let inp_btn = document.getElementsByClassName('btn')
+
+        function randomNum()
+        {
+          let strings = "SANMUGAPRIYAN"
+          let res = ''
+          if(inp_btn)
+          {
+            res=strings[Math.floor(Math.random()*strings.length)]
+          }
+          inp.innerHTML = res;
+        }
+    </script>
+  </body>
+</html>
