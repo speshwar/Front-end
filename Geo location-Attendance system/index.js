@@ -10,7 +10,7 @@ function sendOTP() {
     Email.send({
         SecureToken: "fdc15f8b-342b-46b0-8913-e7d6077c7895",
         To: mail.value,
-        From: "sakthiguruns@gmail.com",
+        From: "eshwarpriyan56@gmail.com",
         Subject: "OTP VERIFICATION",
         Body: emailBody
     }).then(
