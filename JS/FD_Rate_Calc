@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word counter</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: rgb(34, 193, 195);
+            background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+            background-repeat: no-repeat;
+            height: 46.5rem;
+        }
+        
+        .outer {
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 53, 1) 55%, rgba(0, 212, 255, 1) 100%);
+            height: 30rem;
+            width: 50rem;
+            border-radius: 20px;
+            margin-top: 10rem;
+            margin-left: 20rem;
+        }
+        
+        inner {
+            position: relative;
+        }
+        
+        .inner h1 {
+            color: rgb(34, 193, 195);
+            color: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+            position: absolute;
+            top: 15rem;
+            left: 35rem;
+        }
+        
+        #textpart {
+            position: absolute;
+            top: 22rem;
+            left: 35rem;
+            border-radius: 10px;
+            width: 20rem;
+            padding: .7rem;
+        }
+        
+        .result {
+            position: absolute;
+            border: none;
+            padding: 1.3rem;
+            height: 4rem;
+            width: 13rem;
+            border-radius: 15px;
+            background-color: rgb(34, 193, 195);
+            background-color: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+            font-size: medium;
+            font-weight: 700;
+            left: 39rem;
+            top: 30rem;
+            cursor: pointer;
+        }
+        
+        .val {
+            /* background-color: aliceblue; */
+            position: absolute;
+            height: 3rem;
+            width: 30rem;
+            top: 37rem;
+            left: 34rem;
+            font-size: 1.5rem;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">
+            <h1>FD Rate Calculator</h1>
+            <input type="text" id="textpart" placeholder="Enter the month">
+            <button class="result">Calculate</button>
+            <div class="val"></div>
+        </div>
+    </div>
+    <script>
+        let ans = document.querySelector('.result');
+        ans.addEventListener('click', () => {
+            let input = document.getElementById('textpart').value;
+            let print = document.querySelector('.val');
+            if (input < 3) {
+                print.innerHTML = `Calculated interest is 5.8%`
+            } else if (input >= 3 && input <= 6) {
+                print.innerHTML = `Calculated interest is 6.5%`
+            } else if (input >= 7 && input <= 9) {
+                print.innerHTML = `Calculated interest is 6.8%`
+            } else {
+                print.innerHTML = `Calculated interest is 7%`
+            }
+        })
+    </script>
+</body>
+
+</html>
