@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Guru</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="full" id="full">
+        <div class="head">
+            <i class='bx bxs-check-shield logo'></i>
+            <h1 class="headtxt">ATTENDANCE VERIFICATION</h1>
+        </div>
+        <div class="down">
+            <input type="email" id="Mail" class="textbar" placeholder="Enter your Email Id">
+            <button class="btn" id="Sendbtn" onclick="sendOTP()">Send OTP</button>
+
+            <div class="otpVerify">
+                <input type="text" id="otp" class="textbar" placeholder="Enter you OTP">
+                <button class="btn" id="otpbtn" disabled>Verify</button>
+            </div>
+
+
+            <button class="submit btn" type="submit" id="btnsubmit" onclick="findLoc()" disabled>SUBMIT</button>
+            <div class="results" id="result">
+                <i class='bx bxs-message-alt-check' id="resultlogo"></i>
+                <i class='bx bx-message-x' id="Wrong"></i>
+                <p class="paraResult" id="paraResults"></p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p id="cpyright">copyright &2023 Duo Coders. designed by <span>Sanmuga priyan, Aishwarya, Sudharsan</span></p>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth-compat.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> -->
+    <script src="index.js" defer></script>
+</body>
+
+</html>
