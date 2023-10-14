@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(background.jpg);
+}
+
+.keys {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    gap: 3rem;
+    margin-top: 20%;
+}
+
+.keys div {
+    border: 4px solid black;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.682);
+    padding: 1.5rem;
+    height: 5rem;
+    width: 7rem;
+}
+
+.keys span {
+    color: orange;
+    display: block;
+}
+
+.key {
+    transition: 0.2 ease;
+}
+
+.key.active {
+    transform: scale(0.9);
+    border: 4px solid orange;
+}

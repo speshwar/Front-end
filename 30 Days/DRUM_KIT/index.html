@@ -1,0 +1,68 @@
+<!-- om sai ram -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="keys">
+        <div data-key="65" class="key"> A <span>CLAP</span></div>
+        <div data-key="83" class="key"> S <span>HIHAT</span></div>
+        <div data-key="68" class="key"> D <span>KICK</span></div>
+        <div data-key="70" class="key"> F <span>OPENHAT</span></div>
+        <div data-key="71" class="key"> G <span>BOOM</span></div>
+        <div data-key="72" class="key"> H <span>RIDE</span></div>
+        <div data-key="74" class="key"> J <span>SNARE</span></div>
+        <div data-key="75" class="key"> K <span>TOM</span></div>
+        <div data-key="76" class="key"> L <span>TINK</span></div>
+    </div>
+    <audio data-key="65" src="sounds/clap.wav"></audio>
+    <audio data-key="83" src="sounds/hihat.wav"></audio>
+    <audio data-key="68" src="sounds/kick.wav"></audio>
+    <audio data-key="70" src="sounds/openhat.wav"></audio>
+    <audio data-key="71" src="sounds/boom.wav"></audio>
+    <audio data-key="72" src="sounds/ride.wav"></audio>
+    <audio data-key="74" src="sounds/snare.wav"></audio>
+    <audio data-key="75" src="sounds/tom.wav"></audio>
+    <audio data-key="76" src="sounds/tink.wav"></audio>
+    <script>
+        // For Audio
+        let arr2 = [];
+        let audioKey = document.querySelectorAll('audio');
+        const audio_value = Array.from(audioKey);
+        audio_value.forEach(i => {
+            let val = i.dataset.key;
+            arr2.push(val);
+        })
+        console.log(arr2);
+
+        document.addEventListener('keydown', (event) => {
+            // converting the values as string 
+            // bcoz in array stored as strings
+            let covert_string = event.which.toString();
+
+            if (arr2.includes(covert_string)) {
+                let key = document.querySelector(`div[data-key = "${covert_string}"]`);
+                let song = document.querySelector(`audio[data-key = "${covert_string}"]`);
+                if (song && key) {
+                    song.currentTime = 0;
+                    song.play();
+
+                    // style element
+                    key.classList.add('active');
+
+                    setTimeout(() => {
+                        key.classList.remove("active");
+                    }, 100);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
