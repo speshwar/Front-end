@@ -1,0 +1,68 @@
+<!-- om sai ram -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <embed name="GoodEnough" src="assets/evening-birds-singing-in-spring-background-sounds-of-nature-146388.mp3" loop="true" hidden="true" autostart="true">
+    <div class="check">
+        <div class="clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+            <div class="hand second-hand"></div>
+        </div>
+    </div>
+    <!-- <audio id="audioo" autoplay loop>
+        <source src="assets/evening-birds-singing-in-spring-background-sounds-of-nature-146388.mp3" type="audio/mpeg">
+    </audio> -->
+
+    <script>
+        //  FOR AUDIO
+        // let audio = document.getElementById('audioo');
+
+        //  Define a function to play the audio when it ends
+        // function playAudio() {
+        //     audio.currentTime = 0; // Reset the audio to the beginning
+        //     audio.play();
+        // }
+
+        //  Listen for the 'ended' event and play the audio again when it ends
+        // audio.addEventListener('ended', playAudio);
+
+        //  Play the audio initially
+        // playAudio();
+
+        let hourHand = document.getElementsByClassName('hour-hand')[0];
+        let minHand = document.getElementsByClassName('min-hand')[0];
+        let secondHand = document.getElementsByClassName('second-hand')[0];
+
+        updateClock = () => {
+            const now = new Date();
+
+            let hour = now.getHours();
+            let minute = now.getMinutes();
+            let second = now.getSeconds();
+
+            let hourDeg = (hour % 12) * 30 + (minute / 60) * 30;
+            let minuteDeg = (minute / 60) * 360 + (second / 60) * 6;
+            let secondDeg = (second / 60) * 360;
+
+            hourHand.style.transform = `rotate(${hourDeg}deg)`;
+            minHand.style.transform = `rotate(${minuteDeg}deg)`;
+            secondHand.style.transform = `rotate(${secondDeg}deg)`;
+
+        }
+
+        //Setting the current time
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+
+</html>
