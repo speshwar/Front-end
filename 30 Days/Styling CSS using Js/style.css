@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(7, 27, 82);
+    color: #fff;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-top: 1rem;
+    margin-left: 10rem;
+}
+
+.controls {
+    /* background-color: blueviolet; */
+    height: 3rem;
+    width: 70rem;
+    margin-top: 1.5rem;
+    margin-left: 10rem;
+}
+
+label {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+input {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+img {
+    height: 40rem;
+    width: 40rem;
+    margin-top: 3rem;
+    margin-left: 25rem;
+    background-color: #fff;
+}
